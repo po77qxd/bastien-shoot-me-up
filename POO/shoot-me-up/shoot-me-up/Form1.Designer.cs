@@ -28,24 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.SuspendLayout();
+            customPictureBox1 = new CustomPictureBox(components);
+            missile = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)customPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)missile).BeginInit();
+            SuspendLayout();
+            // 
+            // customPictureBox1
+            // 
+            customPictureBox1.Image = (Image)resources.GetObject("customPictureBox1.Image");
+            customPictureBox1.Location = new Point(389, 491);
+            customPictureBox1.Name = "customPictureBox1";
+            customPictureBox1.Size = new Size(111, 92);
+            customPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            customPictureBox1.TabIndex = 2;
+            customPictureBox1.Click += customPictureBox1_Click;
+            // 
+            // missile
+            // 
+            missile.Image = (Image)resources.GetObject("missile.Image");
+            missile.Location = new Point(434, 457);
+            missile.Name = "missile";
+            missile.Size = new Size(20, 28);
+            missile.SizeMode = PictureBoxSizeMode.Zoom;
+            missile.TabIndex = 3;
+            missile.TabStop = false;
+            missile.Click += pictureBox1_Click_1;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(144, 121);
-            this.DoubleBuffered = true;
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImageLayout = ImageLayout.Zoom;
+            ClientSize = new Size(1278, 844);
+            Controls.Add(missile);
+            Controls.Add(customPictureBox1);
+            DoubleBuffered = true;
+            Name = "Form1";
+            Text = "form1";
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)customPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)missile).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+        private CustomPictureBox customPictureBox1;
+        private PictureBox missile;
     }
 }
