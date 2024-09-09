@@ -63,7 +63,7 @@ Elle a choisi d’étudier l’astrophysique pour approfondir ses connaissances 
 En dehors de ses études, Emma adore jouer à des jeux vidéo, en particulier ceux qui ont un thème spatial comme Space Invaders.
 
 Objectifs de vie :
-
+ 
 Obtenir un doctorat en astrophysique.
 Travailler pour une agence spatiale comme l’ESA ou la NASA.
 Voyager dans des observatoires du monde entier pour observer les étoiles et les galaxies.
@@ -99,3 +99,4 @@ Ordinateur : Dell XPS 15
 
 Citation :
 “L’univers est vaste et plein de mystères. Jouer à Space Invaders me rappelle que même les plus grands défis peuvent être surmontés avec persévérance.”
+ 
