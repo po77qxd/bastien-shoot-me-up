@@ -1,4 +1,6 @@
-﻿namespace shoot_me_up
+﻿using System;
+
+namespace shoot_me_up
 {
     partial class Form1
     {
@@ -30,32 +32,29 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            customPictureBox1 = new CustomPictureBox(components);
+            Ship1 = new Ship(components);
             missile = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)customPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Ship1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)missile).BeginInit();
             SuspendLayout();
             // 
-            // customPictureBox1
+            // Ship1
             // 
-            customPictureBox1.Image = (Image)resources.GetObject("customPictureBox1.Image");
-            customPictureBox1.Location = new Point(389, 491);
-            customPictureBox1.Name = "customPictureBox1";
-            customPictureBox1.Size = new Size(111, 92);
-            customPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            customPictureBox1.TabIndex = 2;
-            customPictureBox1.Click += customPictureBox1_Click;
+            Ship1.Image = (Image)resources.GetObject("Ship1.Image");
+            Ship1.Location = new Point(410, 491);
+            Ship1.Name = "Ship1";
+            Ship1.Size = new Size(90, 92);
+            Ship1.SizeMode = PictureBoxSizeMode.Zoom;
+            Ship1.TabIndex = 2;
             // 
             // missile
             // 
             missile.Image = (Image)resources.GetObject("missile.Image");
-            missile.Location = new Point(434, 457);
+            missile.Location = new Point(452, 457);
             missile.Name = "missile";
-            missile.Size = new Size(20, 28);
-            missile.SizeMode = PictureBoxSizeMode.Zoom;
+            missile.Size = new Size(10, 28);
             missile.TabIndex = 3;
             missile.TabStop = false;
-            missile.Click += pictureBox1_Click_1;
             // 
             // Form1
             // 
@@ -64,18 +63,18 @@
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(1278, 844);
             Controls.Add(missile);
-            Controls.Add(customPictureBox1);
+            Controls.Add(Ship1);
             DoubleBuffered = true;
             Name = "Form1";
             Text = "form1";
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)customPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Ship1).EndInit();
             ((System.ComponentModel.ISupportInitialize)missile).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-        private CustomPictureBox customPictureBox1;
+        private Ship Ship1;
         private PictureBox missile;
     }
 }
