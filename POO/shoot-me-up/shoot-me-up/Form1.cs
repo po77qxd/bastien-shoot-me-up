@@ -1,10 +1,12 @@
 using Microsoft.VisualBasic;
-using System.ComponentModel;
+using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Timers;
 using System.Windows.Forms;
 using static System.Windows.Forms.DataFormats;
+
+//TODO: click droit sur la classe > envoyer sur classe.cs
 
 namespace shoot_me_up
 {
@@ -17,7 +19,9 @@ namespace shoot_me_up
         public bool goLeft = false;
         public bool goTop = false;
         public bool goDown = false;
-        public int shipSpeed = 5;
+        public int shipSpeed = 6;
+        public int score = 0;
+        public int bestScore = 0;
 
         public Form1()
         {
@@ -28,8 +32,8 @@ namespace shoot_me_up
         private void InitGame()
         {
             missiles = new List<Missile>();
-            // TODO : créer une liste d'aliens
             ennemies = new List<Ennemy>();
+            SpawnEnnemies();
             // Création et configuration du timer
             timer = new System.Windows.Forms.Timer();
             timer.Interval = 5; // 0,1 seconde = 100 ms
@@ -37,12 +41,64 @@ namespace shoot_me_up
             timer.Start();
         }
 
+
+        public void SpawnEnnemies()
+        {
+            Form1 form = this as Form1;  // Récupérer la référence du formulaire parent
+            int positionX = 25;//position de base du premiere ennemi
+            int positionY = 10;
+            //2 ligne
+            for (int i = 0; i < 2; i++)
+            {
+                //19 ennemis par ligne
+                // Ajouter 10 ennemis a la lyiste
+                for (int j = 0; j < 15; j++)
+                {
+                    var ennemy = new Ennemy(new Point(positionX, positionY));
+                    form.Controls.Add(ennemy);
+                    form.ennemies.Add(ennemy);
+                    positionX += 75;
+                }
+                positionX = 25;
+                positionY -= 100;
+            }
+
+        }
+
         private void Timer_Tick(object sender, EventArgs e)
         {
-            foreach (var missile in missiles)
+            Form1 form = this as Form1;
+            foreach (var missile in missiles.ToList())
             {
                 missile.MoveMissile();
+                //remove missile if they go out of the form
+                if (missile.Top < 0)
+                {
+                    missiles.Remove(missile);
+                    form.Controls.Remove(missile);
+                }
             }
+            foreach (var ennemy in ennemies)
+            {
+                ennemy.MoveEnnemy();
+            }
+
+            foreach(var missile in missiles.ToList())
+            {
+                foreach (var ennemy in ennemies.ToList())
+                {
+                    //regarde si le missile a touché l'ennemi
+                    if (missile.Bounds.IntersectsWith(ennemy.Bounds))
+                    {
+                        missiles.Remove(missile);
+                        ennemies.Remove(ennemy);
+                        form.Controls.Remove(missile);
+                        form.Controls.Remove(ennemy);
+                    }
+                }
+            }
+
+
             if (goRight)
             {
                 if (!(this.Ship1.Left > 1110))//1200 = form width - 90 ship width
@@ -74,100 +130,8 @@ namespace shoot_me_up
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+
         }
         
-    }
-
-    public class Ship : PictureBox
-    {
-        
-        public Ship(IContainer container)
-        {
-            SetStyle(ControlStyles.Selectable, true);
-            SetStyle(ControlStyles.UserMouse, true);
-            TabStop = true;//permet de prendre le controle le vaisseau au début du jeu
-            container.Add(this);
-        }
-
-        private void TimerD_Tick(object sender, EventArgs e)
-        {
-            
-        }
-        public void keyisdown(object sender, KeyEventArgs e)
-        {
-            Form1 form1 = this.Parent as Form1;
-
-            switch (e.KeyCode)
-            {
-                case Keys.A:
-                    form1.goLeft = true;
-                    break;
-                case Keys.D:
-                    form1.goRight = true;
-                    break;
-                case Keys.W:
-                    form1.goTop = true;
-                    break;
-                case Keys.S:
-                    form1.goDown = true;
-                    break;
-                case Keys.Space:
-                    Form1 form = this.Parent as Form1;  // Récupérer la référence du formulaire parent
-                    var missile = new Missile(new Point(this.Location.X, this.Location.Y));
-                    form.Controls.Add(missile);
-                    form.missiles.Add(missile);
-                    break;
-            }
-        }
-
-        public void keyisup(object sender, KeyEventArgs e)
-        {
-            Form1 form1 = this.Parent as Form1;
-            switch (e.KeyCode)
-            {
-                case Keys.A:
-                    form1.goLeft = false;
-                    break;
-                case Keys.D:
-                    form1.goRight = false;
-                    break;
-                case Keys.W:
-                    form1.goTop = false;
-                    break;
-                case Keys.S:
-                    form1.goDown = false;
-                    break;
-            }
-        }
-
-    }
-    public class Missile : PictureBox
-    {
-        // Vitesse de déplacement du missile. Correspond au nombre de pixels dont le missile sera déplacera à chaque fois que le timer appelle MoveMissile.
-        private int speed = 5;
-
-        public Missile(Point initialPosition)
-        {
-            this.Image = Image.FromFile("../../../Ressources/missile.png");
-            this.SizeMode = PictureBoxSizeMode.Normal;
-            //45 = la moitié de la largeur du vaisseau, 3 = la moitié de la largeur du missile. Est utilisé pour centrer le missile
-            this.Location = initialPosition + new Size(45, 0) - new Size(3,0);
-        }
-
-        // Déplace le missile vers le haut
-        public void MoveMissile()
-        {
-            this.Top -= speed;
-        }
-
-    }
-
-    public class Ennemy : PictureBox
-    {
-        public Ennemy() {
-            this.Image = Image.FromFile("../../../Ressources/missile.png");
-            this.Location = new Point(10, 10);
-        }
-
     }
 }

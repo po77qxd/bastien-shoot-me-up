@@ -34,3 +34,4 @@ D:\projets\shoot-me-up\bastien-shoot-me-up\POO\shoot-me-up\shoot-me-up\obj\Debug
 D:\projets\shoot-me-up\bastien-shoot-me-up\POO\shoot-me-up\shoot-me-up\obj\Debug\net6.0-windows\shoot-me-up.pdb
 D:\projets\shoot-me-up\bastien-shoot-me-up\POO\shoot-me-up\shoot-me-up\obj\Debug\net6.0-windows\shoot-me-up.genruntimeconfig.cache
 D:\projets\shoot-me-up\bastien-shoot-me-up\POO\shoot-me-up\shoot-me-up\obj\Debug\net6.0-windows\ref\shoot-me-up.dll
+D:\projets\shoot-me-up\bastien-shoot-me-up\POO\shoot-me-up\shoot-me-up\obj\Debug\net6.0-windows\shoot_me_up.Form2.resources
