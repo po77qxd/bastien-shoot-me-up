@@ -33,7 +33,6 @@ namespace shoot_me_up
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             Ship1 = new Ship(components);
-            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)Ship1).BeginInit();
             SuspendLayout();
             // 
@@ -46,23 +45,12 @@ namespace shoot_me_up
             Ship1.SizeMode = PictureBoxSizeMode.Zoom;
             Ship1.TabIndex = 2;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(990, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(82, 37);
-            label1.TabIndex = 3;
-            label1.Text = "Score";
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(1184, 761);
-            Controls.Add(label1);
             Controls.Add(Ship1);
             DoubleBuffered = true;
             Name = "Form1";
@@ -70,11 +58,9 @@ namespace shoot_me_up
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)Ship1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
         private Ship Ship1;
-        private Label label1;
     }
 }
