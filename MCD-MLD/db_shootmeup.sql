@@ -6,7 +6,7 @@ USE db_shootmeup;
 CREATE TABLE t_joueur(
    joueur_id INT AUTO_INCREMENT,
    nbrVies INT,
-   sprite ,
+   sprite BLOB,
    PRIMARY KEY(joueur_id)
 );
 
@@ -14,7 +14,7 @@ CREATE TABLE t_ennemi(
    ennemi_id INT AUTO_INCREMENT,
    nbrVies INT,
    tir BOOLEAN,
-   sprite ,
+   sprite BLOB,
    PRIMARY KEY(ennemi_id)
 );
 
@@ -24,7 +24,7 @@ CREATE TABLE t_obstacle(
    largeur INT,
    position_x INT,
    position_y INT,
-   sprite ,
+   sprite BLOB,
    PRIMARY KEY(obstacle_id)
 );
 
@@ -59,4 +59,5 @@ CREATE TABLE t_avoir_obstacles(
    FOREIGN KEY(niveau_id) REFERENCES t_niveau(niveau_id),
    FOREIGN KEY(obstacle_id) REFERENCES t_obstacle(obstacle_id)
 );
+
 
