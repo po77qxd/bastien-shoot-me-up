@@ -38,6 +38,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 48F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(355, 27);
             label1.Name = "label1";
             label1.Size = new Size(411, 86);
@@ -80,6 +81,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Black;
             ClientSize = new Size(1184, 761);
             Controls.Add(button3);
             Controls.Add(button2);

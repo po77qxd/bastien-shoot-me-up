@@ -1,19 +1,22 @@
 ﻿using System.ComponentModel;
+using static System.Formats.Asn1.AsnWriter;
 
 
 namespace shoot_me_up
 {
     public class Ship : PictureBox
     {
-
         public Ship(IContainer container)
         {
             SetStyle(ControlStyles.Selectable, true);
             SetStyle(ControlStyles.UserMouse, true);
             TabStop = true;//permet de prendre le controle le vaisseau au début du jeu
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
             container.Add(this);
 
         }
+
 
         private void TimerD_Tick(object sender, EventArgs e)
         {
