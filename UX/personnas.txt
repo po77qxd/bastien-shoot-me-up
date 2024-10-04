@@ -104,47 +104,45 @@ Citation :
 --------------------------------------------------------------------------------
 
 
-Nom : Marie Duval
-Âge : 37 ans
-Profession : Architecte d'intérieur
-Localisation : Marseille, France
+Nom : Lucas Moreau
+Âge : 27 ans
+Profession : Musicien (guitariste et compositeur)
+Localisation : Nantes, France
 
 Objectifs de vie :
 
-Devenir une architecte d’intérieur reconnue pour ses projets innovants.
-Rénover des bâtiments historiques tout en y intégrant des designs modernes.
-Créer une collection de meubles écologiques.
+Devenir un musicien reconnu, en particulier dans le domaine de la musique de film.
+Organiser une tournée internationale pour jouer sa propre musique.
+Créer un studio d'enregistrement accessible à tous, peu importe leurs handicaps.
 
 Motivations :
 
-L'amour des jeux d'arcade pour se détendre après une longue journée de travail.
-Le plaisir de concevoir des espaces qui inspirent les gens, tout comme la stratégie nécessaire pour réussir dans les jeux rétro.
-L'envie de se surpasser, que ce soit en battant un record ou en achevant un projet complexe.
+Le plaisir de jouer à Space Invaders, qui propose une interface simple et un gameplay accessible.
+Le besoin de se détendre et de se divertir après des sessions d'enregistrement.
+La satisfaction de maîtriser des jeux rétro grâce à des adaptations spécifiques.
 
 Frustrations :
 
-Les interruptions inattendues en pleine partie à cause des obligations professionnelles.
-Les niveaux de jeux qui manquent de complexité, ne stimulant pas assez son sens de la stratégie.
-Les publicités ou pop-ups qui viennent gâcher l'immersion dans le jeu.
+Les jeux vidéo qui ne prennent pas suffisamment en compte les besoins des malvoyants, avec des contrastes faibles ou des interfaces trop complexes.
+Les contrôles tactiles ou les systèmes de navigation non adaptés.
+Les descriptions sonores ou auditives manquantes dans les jeux vidéo, rendant certains jeux inaccessibles.
 
 Citation :
 
-“Space Invaders, c’est un peu comme un chantier de rénovation : il faut de la patience, une bonne stratégie et un bon timing pour que tout s’aligne parfaitement.”
+“J'adore la simplicité de Space Invaders. Les couleurs contrastées et le gameplay répétitif permettent de vraiment me concentrer et me plonger dans le jeu, même si je ne vois pas tout parfaitement.”
 
 Personnalité :
 
-Créative
-Rigoureuse
-Ambitieuse
+Créatif
+Patient
+Persévérant
 
 Applications favorites :
 
-Pinterest : Pour chercher de l'inspiration en design d’intérieur.
-Instagram : Pour partager ses projets et suivre d’autres architectes.
-Twitch : Pour se détendre en suivant des parties de jeux rétro ou montrer ses propres compétences.
-
+Spotify : Pour écouter de la musique et partager ses créations.
+SoundCloud : Pour poster ses c ompositions et découvrir des artistes indépendants.
+Discord : Pour échanger avec d'autres musiciens et joueurs sur les adaptations des jeux vidéo pour les personnes malvoyantes.
 Équipement :
 
-Téléphone : Google Pixel 6
-Ordinateur : Surface Laptop 4
-
+Téléphone : iPhone SE avec des réglages d'accessibilité activés (agrandissement, voix-off, etc.).
+Ordinateur : MacBook Air avec logiciels d'accessibilité comme VoiceOver.
