@@ -6,17 +6,18 @@ using System.Timers;
 using System.Windows.Forms;
 using static System.Windows.Forms.DataFormats;
 
-//TODO: click droit sur la classe > envoyer sur classe.cs
+//TODO: sound, powerups, cdc, levels, add a text when you obtain a powerup
 
 namespace shoot_me_up
 {
     public partial class Form1 : Form
     {
-        private System.Windows.Forms.Timer timer;
+        public System.Windows.Forms.Timer timer;
         public List<Missile> missiles;
         public List<Ennemy> ennemies;
         public List<EnnemyMissile> ennemiesMissiles;
         public List<Obstacle> obstacles;
+        public List<Explosion> explosions;
         public bool goRight = false;
         public bool goLeft = false;
         public bool goTop = false;
@@ -25,6 +26,15 @@ namespace shoot_me_up
         public int score = 0;
         public int shipLife = 3;
         public int nbrObstacles = 3;
+        public bool canShoot = true;
+        private bool canMoveRight = true;
+        private bool canMoveLeft = true;
+        private bool canMoveUp = true;
+        private bool canMoveDown = true;
+        //the number of time the timerTick() was called. Use to know when canShoot is true or false
+        private int numberOfTimerIteration = 20;
+        public bool cooldownEnabled = true;
+        public int cooldownDuration = 600;//600 * 5 = 3000 = 3sec
 
         public Form1()
         {
@@ -38,6 +48,7 @@ namespace shoot_me_up
             ennemies = new List<Ennemy>();
             ennemiesMissiles = new List<EnnemyMissile>();
             obstacles = new List<Obstacle>();
+            explosions = new List<Explosion>();
             gameOver.Hide();
             gameOverScore.Hide();
             homeButton.Hide();
@@ -123,6 +134,10 @@ namespace shoot_me_up
                         ennemies.Remove(ennemy);
                         form.Controls.Remove(missile);
                         form.Controls.Remove(ennemy);
+                        var explosion = new Explosion(ennemy.Location);
+                        form.Controls.Add(explosion);
+                        explosions.Add(explosion);
+                        DropPowerUp();
                         score++;
                         scoreCounter.Text = score.ToString();
                     }
@@ -135,6 +150,10 @@ namespace shoot_me_up
                 {
                     ennemies.Remove(ennemy);
                     form.Controls.Remove(ennemy);
+                    var explosion = new Explosion(ennemy.Location);
+                    form.Controls.Add(explosion);
+                    explosions.Add(explosion);
+                    DropPowerUp();
                     shipLife--;
                     switch (shipLife)
                     {
@@ -191,7 +210,7 @@ namespace shoot_me_up
                 }
             }
             //Check collision between obstacle and missiles and ennemies
-            foreach (var obstacle in obstacles.ToList())
+            foreach (var obstacle in obstacles.ToList()) 
             {
                 //Check between missile and obstacle
                 foreach (var missile in missiles.ToList())
@@ -231,6 +250,9 @@ namespace shoot_me_up
                     {
                         ennemies.Remove(ennemy);
                         form.Controls.Remove(ennemy);
+                        var explosion = new Explosion(ennemy.Location);
+                        form.Controls.Add(explosion);
+                        explosions.Add(explosion);
                         obstacle.life = 0;
                         if (obstacle.life == 0)
                         {
@@ -241,43 +263,145 @@ namespace shoot_me_up
                     }
                 }
             }
+            //Check if an explosion needs to be removed
+            foreach (var explosion in explosions.ToList())
+            {
+                explosion.timeBeforeDestruction--;
+                if (explosion.timeBeforeDestruction == 0)
+                {
+                    explosions.Remove(explosion);
+                    form.Controls.Remove(explosion);
+                }
+            }
 
             if (goRight)
             {
                 if (!(this.Ship1.Left > 1110))//1200 = form width - 90 ship width
                 {
-                    this.Ship1.Left += shipSpeed;
-                    //foreach (var obstacle in obstacles)
-                    //{
-                    //    if (!(obstacle.Bounds.IntersectsWith(Ship1.Bounds)))
-                    //    {
-                    //        this.Ship1.Left += shipSpeed;
-                    //    }
-                    //}
+                    canMoveRight = true;
+                    foreach (var obstacle in obstacles)
+                    {
+                        if (obstacle.Bounds.IntersectsWith(Ship1.Bounds))
+                        {
+                            canMoveRight = false;
+                            this.Ship1.Left -= shipSpeed;
+                            break;
+                        }
+                    }
+                    if (canMoveRight)
+                    {
+                        this.Ship1.Left += shipSpeed;
+                    }
                 }
             }
             if (goLeft)
             {
                 if (!(this.Ship1.Left < 0))
                 {
-                    this.Ship1.Left -= shipSpeed;
+                    canMoveLeft = true;
+                    foreach (var obstacle in obstacles)
+                    {
+                        if (obstacle.Bounds.IntersectsWith(Ship1.Bounds))
+                        {
+                            canMoveLeft = false;
+                            this.Ship1.Left += shipSpeed;
+                            break;
+                        }
+                    }
+                    if (canMoveLeft)
+                    {
+                        this.Ship1.Left -= shipSpeed;
+                    }
                 }
             }
             if (goTop)
             {
                 if (!(this.Ship1.Top < 0))
                 {
-                    this.Ship1.Top -= shipSpeed;
+                    canMoveUp = true;
+                    foreach (var obstacle in obstacles)
+                    {
+                        if (obstacle.Bounds.IntersectsWith(Ship1.Bounds))
+                        {
+                            canMoveUp = false;
+                            this.Ship1.Top += shipSpeed;
+                            break;
+                        }
+                    }
+                    if (canMoveUp)
+                    {
+                        this.Ship1.Top -= shipSpeed;
+                    }
                 }
             }
             if (goDown)
             {
                 if (!(this.Ship1.Top > 760))//
                 {
+                    canMoveDown = true;
+                    foreach (var obstacle in obstacles)
+                    {
+                        if (obstacle.Bounds.IntersectsWith(Ship1.Bounds))
+                        {
+                            canMoveDown = false;
+                            this.Ship1.Top -= shipSpeed;
+                            break;
+                        }
+                    }
+                    if (canMoveDown)
+                    {
+                        this.Ship1.Top += shipSpeed;
+                    }
+                }
+            }
+            //Use to solve the noclip bug.
+            //recheck the ship position. If the ship is in an obstacle, move it out.
+            //goRight
+            foreach (var obstacle in obstacles)
+            {
+                if (obstacle.Bounds.IntersectsWith(Ship1.Bounds) && goRight)
+                {
+                    this.Ship1.Left -= shipSpeed;
+                }
+            }
+            //goLeft
+            foreach (var obstacle in obstacles)
+            {
+                if (obstacle.Bounds.IntersectsWith(Ship1.Bounds) && goLeft)
+                {
+                    this.Ship1.Left += shipSpeed;
+                }
+            }
+            //goTop
+            foreach (var obstacle in obstacles)
+            {
+                if (obstacle.Bounds.IntersectsWith(Ship1.Bounds) && goTop)
+                {
                     this.Ship1.Top += shipSpeed;
                 }
             }
+            //goDown
+            foreach (var obstacle in obstacles)
+            {
+                if (obstacle.Bounds.IntersectsWith(Ship1.Bounds) && goDown)
+                {
+                    this.Ship1.Top -= shipSpeed;
+                }
+            }
+            //the shoot cooldown is 100ms (20iteration, 5ms timer tick)
+            if (numberOfTimerIteration == 0 && cooldownEnabled)
+            {
+                canShoot = true;
+                numberOfTimerIteration = 20;
+            }
+            if (!cooldownEnabled)
+            {
+                canShoot = true;
+                CheckPowerUpEnd();
+            }
+            numberOfTimerIteration--;
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -296,6 +420,26 @@ namespace shoot_me_up
             gameOverScore.Text += score.ToString();
             homeButton.Show();
             timer.Stop();
+        }
+        public void DropPowerUp()
+        {
+            Random random = new Random();
+            int rnd = random.Next(0, 20);// 1/20 chance to drop power up
+            if (rnd == 0)
+            {
+                cooldownEnabled = false;
+            }
+        }
+        public void CheckPowerUpEnd()
+        {
+            if (cooldownDuration == 0)
+            {
+                cooldownEnabled = true;
+                cooldownDuration = 600;
+                canShoot = true;
+                numberOfTimerIteration = 20;
+            }
+            cooldownDuration--;
         }
     }
 }

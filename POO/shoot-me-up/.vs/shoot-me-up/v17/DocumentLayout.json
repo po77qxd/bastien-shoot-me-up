@@ -7,12 +7,20 @@
       "RelativeMoniker": "D:0:0:{508906F1-2162-44F3-AFB5-18A3B8B2F343}|shoot-me-up\\shoot-me-up.csproj|solutionrelative:shoot-me-up\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{508906F1-2162-44F3-AFB5-18A3B8B2F343}|shoot-me-up\\shoot-me-up.csproj|d:\\projets\\shoot-me-up\\bastien-shoot-me-up\\poo\\shoot-me-up\\shoot-me-up\\ship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{508906F1-2162-44F3-AFB5-18A3B8B2F343}|shoot-me-up\\shoot-me-up.csproj|solutionrelative:shoot-me-up\\ship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{508906F1-2162-44F3-AFB5-18A3B8B2F343}|shoot-me-up\\shoot-me-up.csproj|d:\\projets\\shoot-me-up\\bastien-shoot-me-up\\poo\\shoot-me-up\\shoot-me-up\\missile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{508906F1-2162-44F3-AFB5-18A3B8B2F343}|shoot-me-up\\shoot-me-up.csproj|solutionrelative:shoot-me-up\\missile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{508906F1-2162-44F3-AFB5-18A3B8B2F343}|shoot-me-up\\shoot-me-up.csproj|d:\\projets\\shoot-me-up\\bastien-shoot-me-up\\poo\\shoot-me-up\\shoot-me-up\\ship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{508906F1-2162-44F3-AFB5-18A3B8B2F343}|shoot-me-up\\shoot-me-up.csproj|solutionrelative:shoot-me-up\\ship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{508906F1-2162-44F3-AFB5-18A3B8B2F343}|shoot-me-up\\shoot-me-up.csproj|d:\\projets\\shoot-me-up\\bastien-shoot-me-up\\poo\\shoot-me-up\\shoot-me-up\\explosion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{508906F1-2162-44F3-AFB5-18A3B8B2F343}|shoot-me-up\\shoot-me-up.csproj|solutionrelative:shoot-me-up\\explosion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{508906F1-2162-44F3-AFB5-18A3B8B2F343}|shoot-me-up\\shoot-me-up.csproj|d:\\projets\\shoot-me-up\\bastien-shoot-me-up\\poo\\shoot-me-up\\shoot-me-up\\ennemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{508906F1-2162-44F3-AFB5-18A3B8B2F343}|shoot-me-up\\shoot-me-up.csproj|solutionrelative:shoot-me-up\\ennemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{508906F1-2162-44F3-AFB5-18A3B8B2F343}|shoot-me-up\\shoot-me-up.csproj|D:\\projets\\shoot-me-up\\bastien-shoot-me-up\\POO\\shoot-me-up\\shoot-me-up\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -33,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{508906F1-2162-44F3-AFB5-18A3B8B2F343}|shoot-me-up\\shoot-me-up.csproj|d:\\projets\\shoot-me-up\\bastien-shoot-me-up\\poo\\shoot-me-up\\shoot-me-up\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{508906F1-2162-44F3-AFB5-18A3B8B2F343}|shoot-me-up\\shoot-me-up.csproj|solutionrelative:shoot-me-up\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{508906F1-2162-44F3-AFB5-18A3B8B2F343}|shoot-me-up\\shoot-me-up.csproj|d:\\projets\\shoot-me-up\\bastien-shoot-me-up\\poo\\shoot-me-up\\shoot-me-up\\ennemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{508906F1-2162-44F3-AFB5-18A3B8B2F343}|shoot-me-up\\shoot-me-up.csproj|solutionrelative:shoot-me-up\\ennemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,11 +50,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Form2.cs",
               "DocumentMoniker": "D:\\projets\\shoot-me-up\\bastien-shoot-me-up\\POO\\shoot-me-up\\shoot-me-up\\Form2.cs",
               "RelativeDocumentMoniker": "shoot-me-up\\Form2.cs",
@@ -63,19 +67,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Form2.cs [Conception]",
               "DocumentMoniker": "D:\\projets\\shoot-me-up\\bastien-shoot-me-up\\POO\\shoot-me-up\\shoot-me-up\\Form2.cs",
               "RelativeDocumentMoniker": "shoot-me-up\\Form2.cs",
               "ToolTip": "D:\\projets\\shoot-me-up\\bastien-shoot-me-up\\POO\\shoot-me-up\\shoot-me-up\\Form2.cs [Conception]",
               "RelativeToolTip": "shoot-me-up\\Form2.cs [Conception]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T11:23:03.358Z",
-              "EditorCaption": " [Conception]"
+              "WhenOpened": "2024-09-27T11:23:03.358Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
+              "Title": "Explosion.cs",
+              "DocumentMoniker": "D:\\projets\\shoot-me-up\\bastien-shoot-me-up\\POO\\shoot-me-up\\shoot-me-up\\Explosion.cs",
+              "RelativeDocumentMoniker": "shoot-me-up\\Explosion.cs",
+              "ToolTip": "D:\\projets\\shoot-me-up\\bastien-shoot-me-up\\POO\\shoot-me-up\\shoot-me-up\\Explosion.cs",
+              "RelativeToolTip": "shoot-me-up\\Explosion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T13:21:15.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Ennemy.cs",
               "DocumentMoniker": "D:\\projets\\shoot-me-up\\bastien-shoot-me-up\\POO\\shoot-me-up\\shoot-me-up\\Ennemy.cs",
               "RelativeDocumentMoniker": "shoot-me-up\\Ennemy.cs",
@@ -88,26 +104,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Ship.cs",
               "DocumentMoniker": "D:\\projets\\shoot-me-up\\bastien-shoot-me-up\\POO\\shoot-me-up\\shoot-me-up\\Ship.cs",
               "RelativeDocumentMoniker": "shoot-me-up\\Ship.cs",
               "ToolTip": "D:\\projets\\shoot-me-up\\bastien-shoot-me-up\\POO\\shoot-me-up\\shoot-me-up\\Ship.cs",
               "RelativeToolTip": "shoot-me-up\\Ship.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowDAAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-27T14:28:47.345Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Missile.cs",
               "DocumentMoniker": "D:\\projets\\shoot-me-up\\bastien-shoot-me-up\\POO\\shoot-me-up\\shoot-me-up\\Missile.cs",
               "RelativeDocumentMoniker": "shoot-me-up\\Missile.cs",
               "ToolTip": "D:\\projets\\shoot-me-up\\bastien-shoot-me-up\\POO\\shoot-me-up\\shoot-me-up\\Missile.cs",
               "RelativeToolTip": "shoot-me-up\\Missile.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAtAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABLAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-27T11:56:33.951Z",
               "EditorCaption": ""
@@ -120,14 +136,14 @@
               "RelativeDocumentMoniker": "shoot-me-up\\Form1.cs",
               "ToolTip": "D:\\projets\\shoot-me-up\\bastien-shoot-me-up\\POO\\shoot-me-up\\shoot-me-up\\Form1.cs",
               "RelativeToolTip": "shoot-me-up\\Form1.cs",
-              "ViewState": "AQIAAAYBAAAAAAAAAAAcwBgBAAA7AAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwCUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-20T11:17:33.171Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Form1.cs [Conception]",
               "DocumentMoniker": "D:\\projets\\shoot-me-up\\bastien-shoot-me-up\\POO\\shoot-me-up\\shoot-me-up\\Form1.cs",
               "RelativeDocumentMoniker": "shoot-me-up\\Form1.cs",
@@ -139,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "D:\\projets\\shoot-me-up\\bastien-shoot-me-up\\POO\\shoot-me-up\\shoot-me-up\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "shoot-me-up\\Form1.Designer.cs",
@@ -152,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\projets\\shoot-me-up\\bastien-shoot-me-up\\POO\\shoot-me-up\\shoot-me-up\\Program.cs",
               "RelativeDocumentMoniker": "shoot-me-up\\Program.cs",
@@ -160,8 +176,7 @@
               "RelativeToolTip": "shoot-me-up\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T13:40:29.051Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-06T13:40:29.051Z"
             }
           ]
         }

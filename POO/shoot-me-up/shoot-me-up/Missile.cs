@@ -5,7 +5,7 @@ namespace shoot_me_up
     public class Missile : PictureBox
     {
         // Vitesse de déplacement du missile. Correspond au nombre de pixels dont le missile sera déplacera à chaque fois que le timer appelle MoveMissile.
-        private int speed = 5;
+        private int speed = 7;
 
         public Missile(Point initialPosition)
         {

@@ -42,9 +42,13 @@ namespace shoot_me_up
                     break;
                 case Keys.Space:
                     Form1 form = this.Parent as Form1;  // Récupérer la référence du formulaire parent
-                    var missile = new Missile(new Point(this.Location.X, this.Location.Y));
-                    form.Controls.Add(missile);
-                    form.missiles.Add(missile);
+                    if (form.canShoot)
+                    {
+                        var missile = new Missile(new Point(this.Location.X, this.Location.Y));
+                        form.Controls.Add(missile);
+                        form.missiles.Add(missile);
+                        form1.canShoot = false;
+                    }
                     break;
             }
         }
