@@ -15,6 +15,7 @@ namespace shoot_me_up
         public Form3()
         {
             InitializeComponent();
+            this.StartPosition = 0;
         }
 
         private void home_Click(object sender, EventArgs e)

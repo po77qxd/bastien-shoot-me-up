@@ -7,6 +7,7 @@ using System.Timers;
 using System.Windows.Forms;
 using static System.Windows.Forms.DataFormats;
 
+
 namespace shoot_me_up
 {
     public partial class Game : Form
@@ -51,6 +52,8 @@ namespace shoot_me_up
             _numberOfObstacles = numberOfObstacles;
             _levelId = levelId;
             InitializeComponent();
+            this.StartPosition = 0;
+            this.Size = new Size(1200, Screen.PrimaryScreen.WorkingArea.Height);
             InitGame();
         }
 
@@ -84,20 +87,20 @@ namespace shoot_me_up
             newBestScoreLabel.Hide();
             spawnObstacle();
             SpawnEnnemies();
-            // Création et configuration du timer
+            // crreation and config of the timer
             timer = new System.Windows.Forms.Timer();
-            timer.Interval = 5; // 0,1 seconde = 100 ms
+            timer.Interval = 5; // 5ms = 0,005 second
             timer.Tick += Timer_Tick;
             timer.Start();
         }
 
         public void spawnObstacle()
         {
-            Game form = this as Game;  // Récupérer la référence du formulaire parent
+            Game form = this as Game;// get the form
             //the obstacle width is 150px
             //(form width - obstacle width * number obstacle) / (nbr obstacle + 1) = size between obstacle
             int spaceBetweenObstacle = (this.Width - 150 * _numberOfObstacles) / (_numberOfObstacles + 1);
-            int x = spaceBetweenObstacle;//position du premier obstacle
+            int x = spaceBetweenObstacle;//position of the first obstacle
             int y = 750;
             for (int i = 0; i < _numberOfObstacles; i++)
             {
@@ -109,8 +112,8 @@ namespace shoot_me_up
         }
         public void SpawnEnnemies()
         {
-            Game form = this as Game;  // Récupérer la référence du formulaire parent
-            int positionX = 25;//position de base du premiere ennemi
+            Game form = this as Game;// get the form
+            int positionX = 25;//position of the first ennemy
             int positionY = 10;
             if (_levelId == 0)
             {

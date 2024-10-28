@@ -43,20 +43,23 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 48F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(406, 36);
+            label1.Location = new Point(355, 27);
             label1.Name = "label1";
-            label1.Size = new Size(514, 106);
+            label1.Size = new Size(411, 86);
             label1.TabIndex = 0;
             label1.Text = "Shoot me up";
             label1.Click += label1_Click;
             // 
             // button1
             // 
+            button1.FlatAppearance.BorderColor = Color.DodgerBlue;
+            button1.FlatAppearance.BorderSize = 2;
+            button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(521, 256);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(456, 192);
             button1.Name = "button1";
-            button1.Size = new Size(250, 120);
+            button1.Size = new Size(219, 90);
             button1.TabIndex = 1;
             button1.Text = "Play";
             button1.UseVisualStyleBackColor = true;
@@ -64,11 +67,14 @@
             // 
             // button2
             // 
+            button2.FlatAppearance.BorderColor = Color.DodgerBlue;
+            button2.FlatAppearance.BorderSize = 2;
+            button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(521, 431);
-            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(456, 323);
             button2.Name = "button2";
-            button2.Size = new Size(250, 120);
+            button2.Size = new Size(219, 90);
             button2.TabIndex = 2;
             button2.Text = "Scores";
             button2.UseVisualStyleBackColor = true;
@@ -76,21 +82,29 @@
             // 
             // button3
             // 
+            button3.FlatAppearance.BorderColor = Color.DodgerBlue;
+            button3.FlatAppearance.BorderSize = 2;
+            button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(521, 608);
-            button3.Margin = new Padding(3, 4, 3, 4);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(456, 456);
             button3.Name = "button3";
-            button3.Size = new Size(250, 151);
+            button3.Size = new Size(219, 113);
             button3.TabIndex = 3;
             button3.Text = "Level editor";
             button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
+            button4.FlatAppearance.BorderColor = Color.DodgerBlue;
+            button4.FlatAppearance.BorderSize = 2;
+            button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.Location = new Point(521, 814);
+            button4.ForeColor = Color.White;
+            button4.Location = new Point(456, 610);
+            button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(250, 120);
+            button4.Size = new Size(219, 90);
             button4.TabIndex = 4;
             button4.Text = "Exit";
             button4.UseVisualStyleBackColor = true;
@@ -101,9 +115,9 @@
             BestScoresTitle.AutoSize = true;
             BestScoresTitle.Font = new Font("Segoe UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point);
             BestScoresTitle.ForeColor = Color.White;
-            BestScoresTitle.Location = new Point(542, 183);
+            BestScoresTitle.Location = new Point(474, 137);
             BestScoresTitle.Name = "BestScoresTitle";
-            BestScoresTitle.Size = new Size(204, 50);
+            BestScoresTitle.Size = new Size(166, 41);
             BestScoresTitle.TabIndex = 5;
             BestScoresTitle.Text = "Best scores";
             // 
@@ -112,17 +126,22 @@
             BestScoresLabel.AutoSize = true;
             BestScoresLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             BestScoresLabel.ForeColor = Color.White;
-            BestScoresLabel.Location = new Point(521, 256);
+            BestScoresLabel.Location = new Point(456, 192);
             BestScoresLabel.Name = "BestScoresLabel";
-            BestScoresLabel.Size = new Size(0, 41);
+            BestScoresLabel.Size = new Size(0, 32);
             BestScoresLabel.TabIndex = 6;
             // 
             // HideScores
             // 
+            HideScores.FlatAppearance.BorderColor = Color.DodgerBlue;
+            HideScores.FlatAppearance.BorderSize = 2;
+            HideScores.FlatStyle = FlatStyle.Flat;
             HideScores.Font = new Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
-            HideScores.Location = new Point(521, 742);
+            HideScores.ForeColor = Color.White;
+            HideScores.Location = new Point(456, 556);
+            HideScores.Margin = new Padding(3, 2, 3, 2);
             HideScores.Name = "HideScores";
-            HideScores.Size = new Size(250, 120);
+            HideScores.Size = new Size(219, 90);
             HideScores.TabIndex = 7;
             HideScores.Text = "Home";
             HideScores.UseVisualStyleBackColor = true;
@@ -130,10 +149,10 @@
             // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(1353, 1015);
+            ClientSize = new Size(1184, 761);
             Controls.Add(HideScores);
             Controls.Add(BestScoresLabel);
             Controls.Add(BestScoresTitle);
@@ -142,7 +161,6 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Home";
             Text = "Home";
             Load += Form2_Load;

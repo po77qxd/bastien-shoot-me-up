@@ -24,7 +24,7 @@ namespace shoot_me_up
         }
         public void keyisdown(object sender, KeyEventArgs e)
         {
-            Game game = this.Parent as Game;
+            Game game = this.Parent as Game;// get parent form
 
             switch (e.KeyCode)
             {
@@ -56,7 +56,7 @@ namespace shoot_me_up
 
         public void keyisup(object sender, KeyEventArgs e)
         {
-            Game form1 = this.Parent as Game;
+            Game form1 = this.Parent as Game;// get parent form
             switch (e.KeyCode)
             {
                 case Keys.A:

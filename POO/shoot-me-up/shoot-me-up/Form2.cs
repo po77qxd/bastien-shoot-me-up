@@ -15,6 +15,7 @@ namespace shoot_me_up
         public Home()
         {
             InitializeComponent();
+            this.StartPosition = 0;
             BestScoresTitle.Hide();
             BestScoresLabel.Hide();
             HideScores.Hide();
