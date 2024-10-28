@@ -1,5 +1,5 @@
 --création de la base de données
-CREATE IF NOT EXISTS db_shootmeup;
+CREATE DATABASE IF NOT EXISTS db_shootmeup;
 USE db_shootmeup;
 
 
