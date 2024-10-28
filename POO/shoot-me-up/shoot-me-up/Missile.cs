@@ -9,11 +9,12 @@ namespace shoot_me_up
 
         public Missile(Point initialPosition)
         {
+            Game form = this.Parent as Game;
             this.Image = Image.FromFile("../../../Ressources/missile.png");
             this.SizeMode = PictureBoxSizeMode.Normal;
             this.Size = new Size(6, 30);
-            //45 = la moitié de la largeur du vaisseau, 3 = la moitié de la largeur du missile. Est utilisé pour centrer le missile
-            this.Location = initialPosition + new Size(42, 0);
+            //Removing the half of the missile width to center the missile
+            this.Location = initialPosition - new Size(this.Width / 2, 0);
         }
 
         // Déplace le missile vers le haut

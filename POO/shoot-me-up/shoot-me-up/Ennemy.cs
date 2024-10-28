@@ -2,7 +2,7 @@
 {
     public class Ennemy : PictureBox
     {
-        int speed = 1;
+        private int speed = 1;
         public Ennemy(Point initialPostion) {
             this.Image = Image.FromFile("../../../Ressources/ennemy.png");
             this.SizeMode = PictureBoxSizeMode.Zoom;

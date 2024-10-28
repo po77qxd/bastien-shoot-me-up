@@ -6,6 +6,7 @@ namespace shoot_me_up
 {
     public class Ship : PictureBox
     {
+        private System.Media.SoundPlayer shootSound = new System.Media.SoundPlayer("../../../Ressources/sounds/laser.wav");
         public Ship(IContainer container)
         {
             SetStyle(ControlStyles.Selectable, true);
@@ -14,7 +15,6 @@ namespace shoot_me_up
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
             container.Add(this);
-
         }
 
 
@@ -24,30 +24,31 @@ namespace shoot_me_up
         }
         public void keyisdown(object sender, KeyEventArgs e)
         {
-            Form1 form1 = this.Parent as Form1;
+            Game game = this.Parent as Game;
 
             switch (e.KeyCode)
             {
                 case Keys.A:
-                    form1.goLeft = true;
+                    game.goLeft = true;
                     break;
                 case Keys.D:
-                    form1.goRight = true;
+                    game.goRight = true;
                     break;
                 case Keys.W:
-                    form1.goTop = true;
+                    game.goTop = true;
                     break;
                 case Keys.S:
-                    form1.goDown = true;
+                    game.goDown = true;
                     break;
                 case Keys.Space:
-                    Form1 form = this.Parent as Form1;  // Récupérer la référence du formulaire parent
-                    if (form.canShoot)
+                    if (game.canShoot)
                     {
-                        var missile = new Missile(new Point(this.Location.X, this.Location.Y));
-                        form.Controls.Add(missile);
-                        form.missiles.Add(missile);
-                        form1.canShoot = false;
+                        //Adding the half of the ship width to center the missile
+                        var missile = new Missile(new Point(this.Location.X + this.Width / 2, this.Location.Y));
+                        game.Controls.Add(missile);
+                        game.missiles.Add(missile);
+                        shootSound.Play();
+                        game.canShoot = false;
                     }
                     break;
             }
@@ -55,7 +56,7 @@ namespace shoot_me_up
 
         public void keyisup(object sender, KeyEventArgs e)
         {
-            Form1 form1 = this.Parent as Form1;
+            Game form1 = this.Parent as Game;
             switch (e.KeyCode)
             {
                 case Keys.A:

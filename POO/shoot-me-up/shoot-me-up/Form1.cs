@@ -1,4 +1,5 @@
 using Microsoft.VisualBasic;
+using shoot_me_up.Properties;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
@@ -6,26 +7,23 @@ using System.Timers;
 using System.Windows.Forms;
 using static System.Windows.Forms.DataFormats;
 
-//TODO: sound, powerups, cdc, levels, add a text when you obtain a powerup
-
 namespace shoot_me_up
 {
-    public partial class Form1 : Form
+    public partial class Game : Form
     {
         public System.Windows.Forms.Timer timer;
         public List<Missile> missiles;
-        public List<Ennemy> ennemies;
-        public List<EnnemyMissile> ennemiesMissiles;
-        public List<Obstacle> obstacles;
-        public List<Explosion> explosions;
+        private List<Ennemy> ennemies;
+        private List<EnnemyMissile> ennemiesMissiles;
+        private List<Obstacle> obstacles;
+        private List<Explosion> explosions;
         public bool goRight = false;
         public bool goLeft = false;
         public bool goTop = false;
         public bool goDown = false;
-        public int shipSpeed = 6;
-        public int score = 0;
-        public int shipLife = 3;
-        public int nbrObstacles = 3;
+        private int shipSpeed = 6;
+        private int score = 0;
+        private int shipLife = 3;
         public bool canShoot = true;
         private bool canMoveRight = true;
         private bool canMoveLeft = true;
@@ -33,25 +31,57 @@ namespace shoot_me_up
         private bool canMoveDown = true;
         //the number of time the timerTick() was called. Use to know when canShoot is true or false
         private int numberOfTimerIteration = 20;
-        public bool cooldownEnabled = true;
-        public int cooldownDuration = 600;//600 * 5 = 3000 = 3sec
+        private bool cooldownEnabled = true;
+        private int cooldownDuration = 600;//600 * 5 = 3000ms = 3sec
+        private bool transpiercingShootEnabled = false;
+        private int transpiercingShootDuration = 600;//600 * 5 = 3000ms = 3sec
+        private int powerUpMessageDuration = 150;
+        private int numberOfPowerUps = 2;
+        private int _numberOfEnnemies;
+        private int _numberOfObstacles;
+        private int _levelId;
+        private string[] bestScores;
+        private int timeBeforeNewWave = 600;//3sec, time before ennemies spawn in level0
+        private int numberOfEnnemiesInWave = 10;
+        private System.Media.SoundPlayer powerUpSound = new System.Media.SoundPlayer("../../../Ressources/sounds/powerup.wav");
 
-        public Form1()
+        public Game(int numberOfEnnemies, int numberOfObstacles, int levelId)
         {
+            _numberOfEnnemies = numberOfEnnemies;
+            _numberOfObstacles = numberOfObstacles;
+            _levelId = levelId;
             InitializeComponent();
             InitGame();
         }
 
         private void InitGame()
         {
+            //create the save file if it doesnt exists
+            if (!File.Exists("../../../Ressources/score.txt"))
+            {
+                bestScores = new string[Config.NUMBER_OF_LEVELS];
+                //replace the default null creation value by 0
+                for (int i = 0; i < Config.NUMBER_OF_LEVELS; i++)
+                {
+                    if (bestScores[i] == null)
+                    {
+                        bestScores[i] = "0";
+                    }
+                }
+                File.AppendAllLines("../../../Ressources/score.txt", bestScores);
+            }
+            bestScores = File.ReadAllLines("../../../Ressources/score.txt");
             missiles = new List<Missile>();
             ennemies = new List<Ennemy>();
             ennemiesMissiles = new List<EnnemyMissile>();
             obstacles = new List<Obstacle>();
             explosions = new List<Explosion>();
+            winLabel.Hide();
             gameOver.Hide();
             gameOverScore.Hide();
-            homeButton.Hide();
+            levelButton.Hide();
+            powerUpLabel.Hide();
+            newBestScoreLabel.Hide();
             spawnObstacle();
             SpawnEnnemies();
             // Création et configuration du timer
@@ -63,49 +93,53 @@ namespace shoot_me_up
 
         public void spawnObstacle()
         {
-            Form1 form = this as Form1;  // Récupérer la référence du formulaire parent
-            int x = 75;//position du premier obstacle
-            int y = 650;
-            for (int i = 0; i < nbrObstacles; i++)
+            Game form = this as Game;  // Récupérer la référence du formulaire parent
+            //the obstacle width is 150px
+            //(form width - obstacle width * number obstacle) / (nbr obstacle + 1) = size between obstacle
+            int spaceBetweenObstacle = (this.Width - 150 * _numberOfObstacles) / (_numberOfObstacles + 1);
+            int x = spaceBetweenObstacle;//position du premier obstacle
+            int y = 750;
+            for (int i = 0; i < _numberOfObstacles; i++)
             {
                 var obstacle = new Obstacle(new Point(x, y));
                 form.Controls.Add(obstacle);
                 form.obstacles.Add(obstacle);
-                x += 450;
+                x += spaceBetweenObstacle + obstacle.Width;
             }
         }
         public void SpawnEnnemies()
         {
-            Form1 form = this as Form1;  // Récupérer la référence du formulaire parent
+            Game form = this as Game;  // Récupérer la référence du formulaire parent
             int positionX = 25;//position de base du premiere ennemi
             int positionY = 10;
-            //2 ligne
-            for (int i = 0; i < 2; i++)
+            if (_levelId == 0)
             {
-                //19 ennemis par ligne
-                // Ajouter 10 ennemis a la liste
-                for (int j = 0; j < 15; j++)
+                _numberOfEnnemies = numberOfEnnemiesInWave;
+            }
+            for (int i = 0; i < _numberOfEnnemies; i++)
+            {
+                Random random = new Random();
+                int rndX = random.Next(75, 125);
+                int rndY = random.Next(0, 25);
+                positionY += rndY;
+                var ennemy = new Ennemy(new Point(positionX, positionY));
+                positionY -= rndY;//reset positionY to original value
+                positionX += rndX;
+                form.Controls.Add(ennemy);
+                form.ennemies.Add(ennemy);
+                //if ennemies are outside of the form, make another line
+                if (positionX > this.Width - ennemy.Width)
                 {
-                    Random random = new Random();
-                    int rnd = random.Next(1, 5);// 1/5 chance that ennemies don't spawn
-                    if (rnd != 1)
-                    {
-                        var ennemy = new Ennemy(new Point(positionX, positionY));
-                        form.Controls.Add(ennemy);
-                        form.ennemies.Add(ennemy);
-                    }
-                    
-                    positionX += 75;
+                    positionX = 25;
+                    positionY -= 100;
                 }
-                positionX = 25;
-                positionY -= 100;
             }
 
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            Form1 form = this as Form1;
+            Game form = this as Game;
             //Move all missiles
             foreach (var missile in missiles.ToList())
             {
@@ -118,9 +152,28 @@ namespace shoot_me_up
                 }
             }
             //Move all ennemies
-            foreach (var ennemy in ennemies)
+            foreach (var ennemy in ennemies.ToList())
             {
                 ennemy.MoveEnnemy();
+                //Remove ennemies and remove one life when they go out of the form
+                if (ennemy.Top > this.Height)
+                {
+                    ennemies.Remove(ennemy);
+                    form.Controls.Remove(ennemy);
+                    shipLife--;
+                    switch (shipLife)
+                    {
+                        case 2:
+                            heart3.Hide();
+                            break;
+                        case 1:
+                            heart2.Hide();
+                            break;
+                        case 0:
+                            GameOver();
+                            break;
+                    }
+                }
             }
             //Check collision between ennemies and missiles
             foreach (var missile in missiles.ToList())
@@ -130,9 +183,12 @@ namespace shoot_me_up
                     //regarde si le missile a touché l'ennemi
                     if (missile.Bounds.IntersectsWith(ennemy.Bounds))
                     {
-                        missiles.Remove(missile);
+                        if (!transpiercingShootEnabled)
+                        {
+                            missiles.Remove(missile);
+                            form.Controls.Remove(missile);
+                        }
                         ennemies.Remove(ennemy);
-                        form.Controls.Remove(missile);
                         form.Controls.Remove(ennemy);
                         var explosion = new Explosion(ennemy.Location);
                         form.Controls.Add(explosion);
@@ -154,6 +210,8 @@ namespace shoot_me_up
                     form.Controls.Add(explosion);
                     explosions.Add(explosion);
                     DropPowerUp();
+                    score++;
+                    scoreCounter.Text = score.ToString();
                     shipLife--;
                     switch (shipLife)
                     {
@@ -167,8 +225,6 @@ namespace shoot_me_up
                             GameOver();
                             break;
                     }
-                    score++;
-                    scoreCounter.Text = score.ToString();
                 }
             }
             //Make ennemies shoot
@@ -184,7 +240,7 @@ namespace shoot_me_up
                     form.ennemiesMissiles.Add(ennemyMissile);
                 }
             }
-            //Move all ennemies missiles
+            //Move all ennemies missiles + Check collision between ship and ennemies missiles 
             foreach (var ennemyMissile in ennemiesMissiles.ToList())
             {
                 ennemyMissile.MoveEnnemyMissile();
@@ -210,7 +266,7 @@ namespace shoot_me_up
                 }
             }
             //Check collision between obstacle and missiles and ennemies
-            foreach (var obstacle in obstacles.ToList()) 
+            foreach (var obstacle in obstacles.ToList())
             {
                 //Check between missile and obstacle
                 foreach (var missile in missiles.ToList())
@@ -276,7 +332,7 @@ namespace shoot_me_up
 
             if (goRight)
             {
-                if (!(this.Ship1.Left > 1110))//1200 = form width - 90 ship width
+                if (!(this.Ship1.Left > this.Width - Ship1.Width))//
                 {
                     canMoveRight = true;
                     foreach (var obstacle in obstacles)
@@ -336,7 +392,7 @@ namespace shoot_me_up
             }
             if (goDown)
             {
-                if (!(this.Ship1.Top > 760))//
+                if (!(this.Ship1.Top > this.Height - Ship1.Height))//
                 {
                     canMoveDown = true;
                     foreach (var obstacle in obstacles)
@@ -394,19 +450,37 @@ namespace shoot_me_up
                 canShoot = true;
                 numberOfTimerIteration = 20;
             }
-            if (!cooldownEnabled)
+            //if a powerup is enabled
+            if (!cooldownEnabled || transpiercingShootEnabled)
             {
-                canShoot = true;
+                if (!cooldownEnabled)
+                {
+                    canShoot = true;
+                }
                 CheckPowerUpEnd();
             }
             numberOfTimerIteration--;
+            if (_levelId == 0)
+            {
+                if (timeBeforeNewWave == 0)
+                {
+                    SpawnEnnemies();
+                    timeBeforeNewWave = 600;
+                    numberOfEnnemiesInWave++;
+                }
+                else
+                {
+                    timeBeforeNewWave--;
+                }
+            }
+            HidePowerUp();
+            CheckWin();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-
         private void homeButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -418,28 +492,111 @@ namespace shoot_me_up
             gameOver.Show();
             gameOverScore.Show();
             gameOverScore.Text += score.ToString();
-            homeButton.Show();
+            WriteBestScore();
+            levelButton.Show();
             timer.Stop();
         }
         public void DropPowerUp()
         {
             Random random = new Random();
             int rnd = random.Next(0, 20);// 1/20 chance to drop power up
-            if (rnd == 0)
+            //only 1 powerup can be enabled at the same time
+            if (rnd == 0 && cooldownEnabled && !transpiercingShootEnabled)
             {
-                cooldownEnabled = false;
+                int rndPowerUp = random.Next(numberOfPowerUps);
+                if (rndPowerUp == 0)
+                {
+                    cooldownEnabled = false;
+                    ShowPowerUp("NO COOLDOWN");
+                }
+                else
+                {
+                    transpiercingShootEnabled = true;
+                    ShowPowerUp("TRANSPIERCING SHOOT");
+                }
+                powerUpSound.Play();
             }
         }
         public void CheckPowerUpEnd()
         {
-            if (cooldownDuration == 0)
+            if (!cooldownEnabled)
             {
-                cooldownEnabled = true;
-                cooldownDuration = 600;
-                canShoot = true;
-                numberOfTimerIteration = 20;
+                if (cooldownDuration == 0)
+                {
+                    cooldownEnabled = true;
+                    cooldownDuration = 600;
+                    canShoot = true;
+                    numberOfTimerIteration = 20;
+                    ShowPowerUpEnd();
+                }
+                cooldownDuration--;
             }
-            cooldownDuration--;
+            if (transpiercingShootEnabled)
+            {
+                if (transpiercingShootDuration == 0)
+                {
+                    transpiercingShootEnabled = false;
+                    transpiercingShootDuration = 600;
+                    canShoot = true;
+                    numberOfTimerIteration = 20;
+                    ShowPowerUpEnd();
+                }
+                transpiercingShootDuration--;
+            }
+        }
+        public void ShowPowerUp(string powerUpName)
+        {
+            powerUpLabel.Text += powerUpName;
+            powerUpLabel.Show();
+        }
+        public void HidePowerUp()
+        {
+            if (powerUpMessageDuration == 0)
+            {
+                powerUpLabel.Hide();
+                powerUpLabel.ResetText();
+                powerUpLabel.Text = "POWER UP ENABLED : ";
+                powerUpMessageDuration = 150;
+            }
+            else
+            {
+                powerUpMessageDuration--;
+            }
+        }
+        public void ShowPowerUpEnd()
+        {
+            powerUpLabel.ResetText();
+            powerUpLabel.Text = "POWER UP ENDED";
+            powerUpLabel.Show();
+        }
+        public void CheckWin()
+        {
+            if (_levelId != 0)
+            {
+                if (ennemies.Count == 0 && shipLife != 0)
+                {
+                    Win();
+                }
+            }
+        }
+        public void Win()
+        {
+            winLabel.Show();
+            gameOverScore.Show();
+            gameOverScore.Text += score.ToString();
+            WriteBestScore();
+            levelButton.Show();
+            timer.Stop();
+        }
+        public void WriteBestScore()
+        {
+            if (score > int.Parse(bestScores[_levelId]))
+            {
+                //show new best score message
+                newBestScoreLabel.Show();
+                bestScores[_levelId] = string.Concat(score);
+                File.WriteAllLines("../../../Ressources/score.txt", bestScores);
+            }
         }
     }
 }
