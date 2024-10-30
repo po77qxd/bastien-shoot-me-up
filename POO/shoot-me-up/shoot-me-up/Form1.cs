@@ -154,6 +154,7 @@ namespace shoot_me_up
                     form.Controls.Remove(missile);
                 }
             }
+            
             //Move all ennemies
             foreach (var ennemy in ennemies.ToList())
             {

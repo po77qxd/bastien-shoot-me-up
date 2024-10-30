@@ -28,104 +28,101 @@
         /// </summary>
         private void InitializeComponent()
         {
-            levelsTitle = new Label();
-            level1 = new Button();
-            level2 = new Button();
-            home = new Button();
-            level0 = new Button();
-            SuspendLayout();
+            this.levelsTitle = new System.Windows.Forms.Label();
+            this.level1 = new System.Windows.Forms.Button();
+            this.level2 = new System.Windows.Forms.Button();
+            this.home = new System.Windows.Forms.Button();
+            this.level0 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // levelsTitle
             // 
-            levelsTitle.AutoSize = true;
-            levelsTitle.Font = new Font("Segoe UI Semibold", 36F, FontStyle.Bold, GraphicsUnit.Point);
-            levelsTitle.ForeColor = Color.White;
-            levelsTitle.Location = new Point(499, 7);
-            levelsTitle.Name = "levelsTitle";
-            levelsTitle.Size = new Size(161, 65);
-            levelsTitle.TabIndex = 0;
-            levelsTitle.Text = "Levels";
+            this.levelsTitle.AutoSize = true;
+            this.levelsTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.levelsTitle.ForeColor = System.Drawing.Color.White;
+            this.levelsTitle.Location = new System.Drawing.Point(499, 7);
+            this.levelsTitle.Name = "levelsTitle";
+            this.levelsTitle.Size = new System.Drawing.Size(161, 65);
+            this.levelsTitle.TabIndex = 0;
+            this.levelsTitle.Text = "Levels";
             // 
             // level1
             // 
-            level1.FlatAppearance.BorderColor = Color.DodgerBlue;
-            level1.FlatAppearance.BorderSize = 2;
-            level1.FlatStyle = FlatStyle.Flat;
-            level1.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point);
-            level1.ForeColor = Color.White;
-            level1.Location = new Point(472, 217);
-            level1.Margin = new Padding(3, 2, 3, 2);
-            level1.Name = "level1";
-            level1.Size = new Size(219, 90);
-            level1.TabIndex = 2;
-            level1.Text = "Level 1";
-            level1.UseVisualStyleBackColor = true;
-            level1.Click += level1_Click;
+            this.level1.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.level1.FlatAppearance.BorderSize = 2;
+            this.level1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.level1.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.level1.ForeColor = System.Drawing.Color.White;
+            this.level1.Location = new System.Drawing.Point(472, 217);
+            this.level1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.level1.Name = "level1";
+            this.level1.Size = new System.Drawing.Size(219, 90);
+            this.level1.TabIndex = 2;
+            this.level1.Text = "Level 1";
+            this.level1.UseVisualStyleBackColor = true;
             // 
             // level2
             // 
-            level2.FlatAppearance.BorderColor = Color.DodgerBlue;
-            level2.FlatAppearance.BorderSize = 2;
-            level2.FlatStyle = FlatStyle.Flat;
-            level2.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point);
-            level2.ForeColor = Color.White;
-            level2.Location = new Point(472, 340);
-            level2.Margin = new Padding(3, 2, 3, 2);
-            level2.Name = "level2";
-            level2.Size = new Size(219, 90);
-            level2.TabIndex = 3;
-            level2.Text = "Level 2";
-            level2.UseVisualStyleBackColor = true;
-            level2.Click += level2_Click;
+            this.level2.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.level2.FlatAppearance.BorderSize = 2;
+            this.level2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.level2.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.level2.ForeColor = System.Drawing.Color.White;
+            this.level2.Location = new System.Drawing.Point(472, 340);
+            this.level2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.level2.Name = "level2";
+            this.level2.Size = new System.Drawing.Size(219, 90);
+            this.level2.TabIndex = 3;
+            this.level2.Text = "Level 2";
+            this.level2.UseVisualStyleBackColor = true;
             // 
             // home
             // 
-            home.FlatAppearance.BorderColor = Color.DodgerBlue;
-            home.FlatAppearance.BorderSize = 2;
-            home.FlatStyle = FlatStyle.Flat;
-            home.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point);
-            home.ForeColor = Color.White;
-            home.Location = new Point(472, 463);
-            home.Margin = new Padding(3, 2, 3, 2);
-            home.Name = "home";
-            home.Size = new Size(219, 90);
-            home.TabIndex = 4;
-            home.Text = "Home";
-            home.UseVisualStyleBackColor = true;
-            home.Click += home_Click;
+            this.home.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.home.FlatAppearance.BorderSize = 2;
+            this.home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.home.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.home.ForeColor = System.Drawing.Color.White;
+            this.home.Location = new System.Drawing.Point(472, 463);
+            this.home.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.home.Name = "home";
+            this.home.Size = new System.Drawing.Size(219, 90);
+            this.home.TabIndex = 4;
+            this.home.Text = "Home";
+            this.home.UseVisualStyleBackColor = true;
             // 
             // level0
             // 
-            level0.FlatAppearance.BorderColor = Color.DodgerBlue;
-            level0.FlatAppearance.BorderSize = 2;
-            level0.FlatStyle = FlatStyle.Flat;
-            level0.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point);
-            level0.ForeColor = Color.White;
-            level0.Location = new Point(472, 98);
-            level0.Margin = new Padding(3, 2, 3, 2);
-            level0.Name = "level0";
-            level0.Size = new Size(219, 90);
-            level0.TabIndex = 1;
-            level0.Text = "Level 0";
-            level0.UseVisualStyleBackColor = true;
-            level0.Click += level0_Click;
+            this.level0.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.level0.FlatAppearance.BorderSize = 2;
+            this.level0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.level0.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.level0.ForeColor = System.Drawing.Color.White;
+            this.level0.Location = new System.Drawing.Point(472, 98);
+            this.level0.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.level0.Name = "level0";
+            this.level0.Size = new System.Drawing.Size(219, 90);
+            this.level0.TabIndex = 1;
+            this.level0.Text = "Survie";
+            this.level0.UseVisualStyleBackColor = true;
             // 
             // Form3
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Black;
-            ClientSize = new Size(1184, 791);
-            Controls.Add(level0);
-            Controls.Add(home);
-            Controls.Add(level2);
-            Controls.Add(level1);
-            Controls.Add(levelsTitle);
-            Margin = new Padding(3, 2, 3, 2);
-            Name = "Form3";
-            Text = "Form3";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(1184, 791);
+            this.Controls.Add(this.level0);
+            this.Controls.Add(this.home);
+            this.Controls.Add(this.level2);
+            this.Controls.Add(this.level1);
+            this.Controls.Add(this.levelsTitle);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "Form3";
+            this.Text = "Form3";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

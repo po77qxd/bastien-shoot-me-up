@@ -1,0 +1,22 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36" version="24.8.3">
+  <diagram name="Page-1" id="VSRX_1kQHHzlb-eo8tCX">
+    <mxGraphModel dx="576" dy="779" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="zOCFKbc6C0ncxJU98J9s-1" value="Game" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="90" width="270" height="630" as="geometry" />
+        </mxCell>
+        <mxCell id="zOCFKbc6C0ncxJU98J9s-2" value="+ timer:&amp;nbsp;&amp;nbsp;System.Windows.Forms.Timer&lt;div&gt;+ missiles: List&amp;lt;Missile&amp;gt;&lt;/div&gt;&lt;div&gt;- ennemies: List&amp;lt;Ennemy&amp;gt;&lt;/div&gt;&lt;div&gt;- ennemiesMissiles: List&amp;lt;EnnemyMissile&amp;gt;&lt;/div&gt;&lt;div&gt;- obstacles: List&amp;lt;Obstacle&amp;gt;&lt;/div&gt;&lt;div&gt;- explosions: List&amp;lt;Explosion&amp;gt;&lt;/div&gt;&lt;div&gt;+ goRight: bool&lt;/div&gt;&lt;div&gt;+ goLeft: bool&lt;/div&gt;&lt;div&gt;+goTop: bool&lt;/div&gt;&lt;div&gt;+goDown: bool&lt;/div&gt;&lt;div&gt;- shipSpeed: int&lt;/div&gt;&lt;div&gt;- score: int&lt;/div&gt;&lt;div&gt;- shipLife: int&lt;/div&gt;&lt;div&gt;+ canShoot: bool&lt;/div&gt;&lt;div&gt;- canMoveRight: bool&lt;/div&gt;&lt;div&gt;- canMoveLeft: bool&lt;/div&gt;&lt;div&gt;- canMoveUp: bool&lt;/div&gt;&lt;div&gt;- canMoveDown: bool&lt;/div&gt;&lt;div&gt;- numberOfTimerIteration: int&lt;/div&gt;&lt;div&gt;- cooldownEnabled: bool&lt;/div&gt;&lt;div&gt;- coolDownDuration: int&lt;/div&gt;&lt;div&gt;- transpiercingShootEnabled: bool&lt;/div&gt;&lt;div&gt;- transpiercingShootDuration: int&lt;/div&gt;&lt;div&gt;- powerUpMessageDuration: int&lt;/div&gt;&lt;div&gt;- numberOfPowerUps: int&lt;/div&gt;&lt;div&gt;- _numberOfEnnemies: int&lt;/div&gt;&lt;div&gt;- _numberOfObstacles: int&lt;/div&gt;&lt;div&gt;- _levelId: int&lt;/div&gt;&lt;div&gt;- bestScores: string[]&lt;/div&gt;&lt;div&gt;- timeBeforeNewWave: int&lt;/div&gt;&lt;div&gt;- numberOfEnnemiesInWave: int&lt;/div&gt;&lt;div&gt;- powerUpSound:&amp;nbsp;System.Media.SoundPlayer&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="zOCFKbc6C0ncxJU98J9s-1">
+          <mxGeometry y="26" width="270" height="474" as="geometry" />
+        </mxCell>
+        <mxCell id="zOCFKbc6C0ncxJU98J9s-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="zOCFKbc6C0ncxJU98J9s-1">
+          <mxGeometry y="500" width="270" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="zOCFKbc6C0ncxJU98J9s-4" value="+ method(type): type&lt;div&gt;- InitGame(): void&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="zOCFKbc6C0ncxJU98J9s-1">
+          <mxGeometry y="508" width="270" height="122" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
