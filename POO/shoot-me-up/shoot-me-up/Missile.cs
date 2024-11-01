@@ -2,6 +2,9 @@
 
 namespace shoot_me_up
 {
+    /// <summary>
+    /// Class missile, type pictureBox
+    /// </summary>
     public class Missile : PictureBox
     {
         // missile speed. The number of pixel the missile move when the timer calls MoveMissile()
@@ -17,7 +20,9 @@ namespace shoot_me_up
             this.Location = initialPosition - new Size(this.Width / 2, 0);
         }
 
-        
+        /// <summary>
+        /// Move the missile
+        /// </summary>
         public void MoveMissile()
         {
             this.Top -= speed;

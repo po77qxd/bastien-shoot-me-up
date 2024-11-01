@@ -10,6 +10,9 @@ using static System.Windows.Forms.DataFormats;
 
 namespace shoot_me_up
 {
+    /// <summary>
+    /// class game
+    /// </summary>
     public partial class Game : Form
     {
         public System.Windows.Forms.Timer timer;
@@ -45,7 +48,12 @@ namespace shoot_me_up
         private int timeBeforeNewWave = 600;//3sec, time before ennemies spawn in level0
         private int numberOfEnnemiesInWave = 10;
         private System.Media.SoundPlayer powerUpSound = new System.Media.SoundPlayer("../../../Ressources/sounds/powerup.wav");
-
+        /// <summary>
+        /// Game constructor
+        /// </summary>
+        /// <param name="numberOfEnnemies">The number of ennemies in the level. Set to 0 for infinite ennemies</param>
+        /// <param name="numberOfObstacles">The number of obstacle in the level</param>
+        /// <param name="levelId">the level id.</param>
         public Game(int numberOfEnnemies, int numberOfObstacles, int levelId)
         {
             _numberOfEnnemies = numberOfEnnemies;
@@ -56,7 +64,9 @@ namespace shoot_me_up
             this.Size = new Size(1200, Screen.PrimaryScreen.WorkingArea.Height);
             InitGame();
         }
-
+        /// <summary>
+        /// Create the save file if it doesnt exists, create the list, hide the gameOver/wni screen elements, spawn the ennemies and obstacle
+        /// </summary>
         private void InitGame()
         {
             //create the save file if it doesnt exists
@@ -93,7 +103,9 @@ namespace shoot_me_up
             timer.Tick += Timer_Tick;
             timer.Start();
         }
-
+        /// <summary>
+        /// spawn the obstacle.
+        /// </summary>
         public void spawnObstacle()
         {
             Game form = this as Game;// get the form
@@ -110,6 +122,9 @@ namespace shoot_me_up
                 x += spaceBetweenObstacle + obstacle.Width;
             }
         }
+        /// <summary>
+        /// spawn the ennemies
+        /// </summary>
         public void SpawnEnnemies()
         {
             Game form = this as Game;// get the form
@@ -139,8 +154,13 @@ namespace shoot_me_up
             }
 
         }
-
-        private void Timer_Tick(object sender, EventArgs e)
+        /// <summary>
+        /// move the missiles, ennemies, check collisions, make ennemies shoot, check if explosion need to be removed.
+        /// Move the ship, check if the ship can shoot
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Timer_Tick(object sender, EventArgs e)
         {
             Game form = this as Game;
             //Move all missiles
@@ -485,10 +505,18 @@ namespace shoot_me_up
         {
 
         }
+        /// <summary>
+        /// close the game form and show the level selector form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void homeButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        /// <summary>
+        /// show the game over elements
+        /// </summary>
         public void GameOver()
         {
             //show game over screen and stop game
@@ -500,6 +528,9 @@ namespace shoot_me_up
             levelButton.Show();
             timer.Stop();
         }
+        /// <summary>
+        /// give a power up to the player
+        /// </summary>
         public void DropPowerUp()
         {
             Random random = new Random();
@@ -521,6 +552,9 @@ namespace shoot_me_up
                 powerUpSound.Play();
             }
         }
+        /// <summary>
+        /// Check for the power up end
+        /// </summary>
         public void CheckPowerUpEnd()
         {
             if (!cooldownEnabled)
@@ -548,11 +582,18 @@ namespace shoot_me_up
                 transpiercingShootDuration--;
             }
         }
+        /// <summary>
+        /// show what power up is enabled
+        /// </summary>
+        /// <param name="powerUpName">the powerup name</param>
         public void ShowPowerUp(string powerUpName)
         {
             powerUpLabel.Text += powerUpName;
             powerUpLabel.Show();
         }
+        /// <summary>
+        /// hide the po^wer up message
+        /// </summary>
         public void HidePowerUp()
         {
             if (powerUpMessageDuration == 0)
@@ -567,12 +608,18 @@ namespace shoot_me_up
                 powerUpMessageDuration--;
             }
         }
+        /// <summary>
+        /// Show the "poer up ended" message
+        /// </summary>
         public void ShowPowerUpEnd()
         {
             powerUpLabel.ResetText();
             powerUpLabel.Text = "POWER UP ENDED";
             powerUpLabel.Show();
         }
+        /// <summary>
+        /// check if the player won
+        /// </summary>
         public void CheckWin()
         {
             if (_levelId != 0)
@@ -583,6 +630,9 @@ namespace shoot_me_up
                 }
             }
         }
+        /// <summary>
+        /// Show the win elements
+        /// </summary>
         public void Win()
         {
             winLabel.Show();
@@ -592,6 +642,9 @@ namespace shoot_me_up
             levelButton.Show();
             timer.Stop();
         }
+        /// <summary>
+        /// If the previous best score has been beaten, show the "new best score" message and write the best score into the save file.
+        /// </summary>
         public void WriteBestScore()
         {
             if (score > int.Parse(bestScores[_levelId]))

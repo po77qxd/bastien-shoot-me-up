@@ -4,6 +4,9 @@ using static System.Formats.Asn1.AsnWriter;
 
 namespace shoot_me_up
 {
+    /// <summary>
+    /// class ship, type PictureBox
+    /// </summary>
     public class Ship : PictureBox
     {
         private System.Media.SoundPlayer shootSound = new System.Media.SoundPlayer("../../../Ressources/sounds/laser.wav");
@@ -22,6 +25,11 @@ namespace shoot_me_up
         {
             
         }
+        /// <summary>
+        /// set the "goDirection" value to true when a key is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void keyisdown(object sender, KeyEventArgs e)
         {
             Game game = this.Parent as Game;// get parent form
@@ -53,7 +61,11 @@ namespace shoot_me_up
                     break;
             }
         }
-
+        /// <summary>
+        /// set the "goDirection" value to false when the key isnt pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void keyisup(object sender, KeyEventArgs e)
         {
             Game form1 = this.Parent as Game;// get parent form

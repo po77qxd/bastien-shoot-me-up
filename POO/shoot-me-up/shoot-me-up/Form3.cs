@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace shoot_me_up
 {
+    /// <summary>
+    /// Class for the level selector
+    /// </summary>
     public partial class Form3 : Form
     {
         public Form3()
@@ -17,26 +20,42 @@ namespace shoot_me_up
             InitializeComponent();
             this.StartPosition = 0;
         }
-
+        /// <summary>
+        /// close the form and show the home form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void home_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Starts the level 1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void level1_Click(object sender, EventArgs e)
         {
             this.Hide();
             new Game(Config.NUMBER_ENNEMIES_LEVEL1, Config.NUMBER_OBSTACLES_LEVEL1, 1).ShowDialog();
             this.Show();
         }
-
+        /// <summary>
+        /// Starts the level 2
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void level2_Click(object sender, EventArgs e)
         {
             this.Hide();
             new Game(Config.NUMBER_ENNEMIES_LEVEL2, Config.NUMBER_OBSTACLES_LEVEL2, 2).ShowDialog();
             this.Show();
         }
-
+        /// <summary>
+        /// start the "infinite" level
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void level0_Click(object sender, EventArgs e)
         {
             this.Hide();

@@ -1,5 +1,8 @@
 ﻿namespace shoot_me_up
 {
+    /// <summary>
+    /// class explosion, type PictureBox
+    /// </summary>
     public class Explosion : PictureBox
     {
         public int timeBeforeDestruction = 10;//10 * 5 = 50ms before removing

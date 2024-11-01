@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace shoot_me_up
 {
+    /// <summary>
+    /// class for the home screen
+    /// </summary>
     public partial class Home : Form
     {
         public Home()
@@ -35,23 +38,38 @@ namespace shoot_me_up
         {
 
         }
-        //play button
+        /// <summary>
+        /// play button click method. Show the level selector form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
             new Form3().ShowDialog();
             this.Show();
         }
-        //exit button
+        /// <summary>
+        /// exit button click method. close the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        //score button
+        /// <summary>
+        /// score button click method. Show scores
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             showScores();
         }
+        /// <summary>
+        /// show scores, hide home screen buttons
+        /// </summary>
         public void showScores()
         {
             string[] bestScores = File.ReadAllLines("../../../Ressources/score.txt");
@@ -68,7 +86,11 @@ namespace shoot_me_up
             BestScoresLabel.Show();
             HideScores.Show();
         }
-
+        /// <summary>
+        /// hide the scores and show the home screen button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void HideScores_Click(object sender, EventArgs e)
         {
             button1.Show();

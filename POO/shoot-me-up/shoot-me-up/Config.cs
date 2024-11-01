@@ -2,6 +2,9 @@
 
 namespace shoot_me_up
 {
+    /// <summary>
+    /// class with the const
+    /// </summary>
     public static class Config
     {
         public const int NUMBER_ENNEMIES_LEVEL0 = 0;//0 = infinite ennemies

@@ -38,8 +38,7 @@
   <Class Name="shoot_me_up.Form3">
     <Position X="7.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAACAAAAAAAACAAAACAAEAABAEAAQAAAAAAAA=</HashCode>
-      <FileName>Form3.cs</FileName>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAEAABAEAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="shoot_me_up.Home">
