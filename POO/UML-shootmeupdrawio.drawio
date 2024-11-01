@@ -1,20 +1,82 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36" version="24.8.3">
   <diagram name="Page-1" id="VSRX_1kQHHzlb-eo8tCX">
-    <mxGraphModel dx="576" dy="779" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="844" dy="459" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="zOCFKbc6C0ncxJU98J9s-1" value="Game" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="80" y="90" width="270" height="630" as="geometry" />
+        <mxCell id="zOCFKbc6C0ncxJU98J9s-1" value="Game" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="110" y="50" width="270" height="750" as="geometry" />
         </mxCell>
-        <mxCell id="zOCFKbc6C0ncxJU98J9s-2" value="+ timer:&amp;nbsp;&amp;nbsp;System.Windows.Forms.Timer&lt;div&gt;+ missiles: List&amp;lt;Missile&amp;gt;&lt;/div&gt;&lt;div&gt;- ennemies: List&amp;lt;Ennemy&amp;gt;&lt;/div&gt;&lt;div&gt;- ennemiesMissiles: List&amp;lt;EnnemyMissile&amp;gt;&lt;/div&gt;&lt;div&gt;- obstacles: List&amp;lt;Obstacle&amp;gt;&lt;/div&gt;&lt;div&gt;- explosions: List&amp;lt;Explosion&amp;gt;&lt;/div&gt;&lt;div&gt;+ goRight: bool&lt;/div&gt;&lt;div&gt;+ goLeft: bool&lt;/div&gt;&lt;div&gt;+goTop: bool&lt;/div&gt;&lt;div&gt;+goDown: bool&lt;/div&gt;&lt;div&gt;- shipSpeed: int&lt;/div&gt;&lt;div&gt;- score: int&lt;/div&gt;&lt;div&gt;- shipLife: int&lt;/div&gt;&lt;div&gt;+ canShoot: bool&lt;/div&gt;&lt;div&gt;- canMoveRight: bool&lt;/div&gt;&lt;div&gt;- canMoveLeft: bool&lt;/div&gt;&lt;div&gt;- canMoveUp: bool&lt;/div&gt;&lt;div&gt;- canMoveDown: bool&lt;/div&gt;&lt;div&gt;- numberOfTimerIteration: int&lt;/div&gt;&lt;div&gt;- cooldownEnabled: bool&lt;/div&gt;&lt;div&gt;- coolDownDuration: int&lt;/div&gt;&lt;div&gt;- transpiercingShootEnabled: bool&lt;/div&gt;&lt;div&gt;- transpiercingShootDuration: int&lt;/div&gt;&lt;div&gt;- powerUpMessageDuration: int&lt;/div&gt;&lt;div&gt;- numberOfPowerUps: int&lt;/div&gt;&lt;div&gt;- _numberOfEnnemies: int&lt;/div&gt;&lt;div&gt;- _numberOfObstacles: int&lt;/div&gt;&lt;div&gt;- _levelId: int&lt;/div&gt;&lt;div&gt;- bestScores: string[]&lt;/div&gt;&lt;div&gt;- timeBeforeNewWave: int&lt;/div&gt;&lt;div&gt;- numberOfEnnemiesInWave: int&lt;/div&gt;&lt;div&gt;- powerUpSound:&amp;nbsp;System.Media.SoundPlayer&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="zOCFKbc6C0ncxJU98J9s-1">
+        <mxCell id="zOCFKbc6C0ncxJU98J9s-2" value="+ timer:&amp;nbsp;&amp;nbsp;System.Windows.Forms.Timer&lt;div&gt;+ missiles: List&amp;lt;Missile&amp;gt;&lt;/div&gt;&lt;div&gt;- ennemies: List&amp;lt;Ennemy&amp;gt;&lt;/div&gt;&lt;div&gt;- ennemiesMissiles: List&amp;lt;EnnemyMissile&amp;gt;&lt;/div&gt;&lt;div&gt;- obstacles: List&amp;lt;Obstacle&amp;gt;&lt;/div&gt;&lt;div&gt;- explosions: List&amp;lt;Explosion&amp;gt;&lt;/div&gt;&lt;div&gt;+ goRight: bool&lt;/div&gt;&lt;div&gt;+ goLeft: bool&lt;/div&gt;&lt;div&gt;+goTop: bool&lt;/div&gt;&lt;div&gt;+goDown: bool&lt;/div&gt;&lt;div&gt;- shipSpeed: int&lt;/div&gt;&lt;div&gt;- score: int&lt;/div&gt;&lt;div&gt;- shipLife: int&lt;/div&gt;&lt;div&gt;+ canShoot: bool&lt;/div&gt;&lt;div&gt;- canMoveRight: bool&lt;/div&gt;&lt;div&gt;- canMoveLeft: bool&lt;/div&gt;&lt;div&gt;- canMoveUp: bool&lt;/div&gt;&lt;div&gt;- canMoveDown: bool&lt;/div&gt;&lt;div&gt;- numberOfTimerIteration: int&lt;/div&gt;&lt;div&gt;- cooldownEnabled: bool&lt;/div&gt;&lt;div&gt;- coolDownDuration: int&lt;/div&gt;&lt;div&gt;- transpiercingShootEnabled: bool&lt;/div&gt;&lt;div&gt;- transpiercingShootDuration: int&lt;/div&gt;&lt;div&gt;- powerUpMessageDuration: int&lt;/div&gt;&lt;div&gt;- numberOfPowerUps: int&lt;/div&gt;&lt;div&gt;- _numberOfEnnemies: int&lt;/div&gt;&lt;div&gt;- _numberOfObstacles: int&lt;/div&gt;&lt;div&gt;- _levelId: int&lt;/div&gt;&lt;div&gt;- bestScores: string[]&lt;/div&gt;&lt;div&gt;- timeBeforeNewWave: int&lt;/div&gt;&lt;div&gt;- numberOfEnnemiesInWave: int&lt;/div&gt;&lt;div&gt;- powerUpSound:&amp;nbsp;System.Media.SoundPlayer&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;" parent="zOCFKbc6C0ncxJU98J9s-1" vertex="1">
           <mxGeometry y="26" width="270" height="474" as="geometry" />
         </mxCell>
-        <mxCell id="zOCFKbc6C0ncxJU98J9s-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="zOCFKbc6C0ncxJU98J9s-1">
+        <mxCell id="zOCFKbc6C0ncxJU98J9s-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;rounded=0;" parent="zOCFKbc6C0ncxJU98J9s-1" vertex="1">
           <mxGeometry y="500" width="270" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="zOCFKbc6C0ncxJU98J9s-4" value="+ method(type): type&lt;div&gt;- InitGame(): void&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="zOCFKbc6C0ncxJU98J9s-1">
-          <mxGeometry y="508" width="270" height="122" as="geometry" />
+        <mxCell id="zOCFKbc6C0ncxJU98J9s-4" value="+ method(type): type&lt;div&gt;- InitGame(): void&lt;/div&gt;&lt;div&gt;+ SpawnObstacle(): void&lt;/div&gt;&lt;div&gt;+ SpawnEnnemies(): void&lt;/div&gt;&lt;div&gt;- timerTick(Object, EventArgs): void&lt;/div&gt;&lt;div&gt;- Form1_Load&lt;span style=&quot;background-color: initial;&quot;&gt;(Object, EventArgs):void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;- HomeButton_Click&lt;span style=&quot;background-color: initial;&quot;&gt;(Object, EventArgs):void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ GameOver(): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ DropPowerUp(): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ CheckPowerUpEnd(): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ ShowPowerUp(string): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ HidePowerUp(): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ ShowPowerUpEnd(): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ CheckWin(): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ Win(): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ WriteBestScore(): void&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;" parent="zOCFKbc6C0ncxJU98J9s-1" vertex="1">
+          <mxGeometry y="508" width="270" height="242" as="geometry" />
+        </mxCell>
+        <mxCell id="tV17f5QDm5TzOapysorF-3" value="Missile" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="50" width="160" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="tV17f5QDm5TzOapysorF-4" value="- speed: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="tV17f5QDm5TzOapysorF-3">
+          <mxGeometry y="26" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tV17f5QDm5TzOapysorF-5" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;rounded=0;" vertex="1" parent="tV17f5QDm5TzOapysorF-3">
+          <mxGeometry y="52" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="tV17f5QDm5TzOapysorF-6" value="+ MoveMissile(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="tV17f5QDm5TzOapysorF-3">
+          <mxGeometry y="60" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tV17f5QDm5TzOapysorF-7" value="Ship" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="180" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="tV17f5QDm5TzOapysorF-8" value="- shootSound:&amp;nbsp;System.Media.SoundPlayer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="tV17f5QDm5TzOapysorF-7">
+          <mxGeometry y="26" width="260" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="tV17f5QDm5TzOapysorF-9" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;rounded=0;" vertex="1" parent="tV17f5QDm5TzOapysorF-7">
+          <mxGeometry y="50" width="260" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="tV17f5QDm5TzOapysorF-10" value="+ keyisdown(Object, EventArgs): void&lt;div&gt;+ keyisup(&lt;span style=&quot;background-color: initial;&quot;&gt;Object, EventArgs&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="tV17f5QDm5TzOapysorF-7">
+          <mxGeometry y="58" width="260" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="tV17f5QDm5TzOapysorF-11" value="Ennemy" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="310" width="160" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="tV17f5QDm5TzOapysorF-12" value="- speed: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="tV17f5QDm5TzOapysorF-11">
+          <mxGeometry y="26" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tV17f5QDm5TzOapysorF-13" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;rounded=0;" vertex="1" parent="tV17f5QDm5TzOapysorF-11">
+          <mxGeometry y="52" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="tV17f5QDm5TzOapysorF-14" value="+ MoveEnnemy(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="tV17f5QDm5TzOapysorF-11">
+          <mxGeometry y="60" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tV17f5QDm5TzOapysorF-15" value="Explosion" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="440" width="270" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="tV17f5QDm5TzOapysorF-16" value="+ timeBeforeDestruction: int&lt;div&gt;- explosionSound:&amp;nbsp;System.Media.SoundPlayer&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="tV17f5QDm5TzOapysorF-15">
+          <mxGeometry y="26" width="270" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="tV17f5QDm5TzOapysorF-17" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;rounded=0;" vertex="1" parent="tV17f5QDm5TzOapysorF-15">
+          <mxGeometry y="70" width="270" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="tV17f5QDm5TzOapysorF-18" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="tV17f5QDm5TzOapysorF-15">
+          <mxGeometry y="78" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tV17f5QDm5TzOapysorF-19" value="Home" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="585" width="250" height="140" as="geometry">
+            <mxRectangle x="490" y="585" width="70" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tV17f5QDm5TzOapysorF-20" value="+ field: type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="tV17f5QDm5TzOapysorF-19">
+          <mxGeometry y="26" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tV17f5QDm5TzOapysorF-21" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;rounded=0;" vertex="1" parent="tV17f5QDm5TzOapysorF-19">
+          <mxGeometry y="52" width="250" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="tV17f5QDm5TzOapysorF-22" value="- button1-Click(Object, EventArgs): void&lt;div&gt;- button4-Click(Object, EventArgs): void&lt;/div&gt;&lt;div&gt;- button2-Click(Object, EventArgs): void&lt;/div&gt;&lt;div&gt;+ ShowBestScores(): void&lt;/div&gt;&lt;div&gt;- HideScores_Click(&lt;span style=&quot;background-color: initial;&quot;&gt;Object, EventArgs&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;): void&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="tV17f5QDm5TzOapysorF-19">
+          <mxGeometry y="60" width="250" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
