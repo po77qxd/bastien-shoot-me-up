@@ -18,8 +18,12 @@ namespace shoot_me_up
         public System.Windows.Forms.Timer timer;
         public List<Missile> missiles;
         private List<Ennemy> ennemies;
+        //for the test
+        public List<Ennemy> ennemiesPublic { get => ennemies; }
         private List<EnnemyMissile> ennemiesMissiles;
         private List<Obstacle> obstacles;
+        //used for the test
+        public List<Obstacle> obstaclesPublic { get => obstacles; }
         private List<Explosion> explosions;
         public bool goRight = false;
         public bool goLeft = false;
@@ -28,6 +32,8 @@ namespace shoot_me_up
         private int shipSpeed = 6;
         private int score = 0;
         private int shipLife = 3;
+        //for the test
+        public int shipLifePublic { get => shipLife; }
         public bool canShoot = true;
         private bool canMoveRight = true;
         private bool canMoveLeft = true;
@@ -356,7 +362,7 @@ namespace shoot_me_up
 
             if (goRight)
             {
-                if (!(this.Ship1.Left > this.Width - Ship1.Width))//
+                if (!(this.Ship1.Left > this.Width - Ship1.Width))
                 {
                     canMoveRight = true;
                     foreach (var obstacle in obstacles)

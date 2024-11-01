@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "shoot-me-up", "shoot-me-up\shoot-me-up.csproj", "{508906F1-2162-44F3-AFB5-18A3B8B2F343}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestShootMeUp", "TestShootMeUp\TestShootMeUp.csproj", "{1082E5E5-C27F-4627-8E6C-D8C3EFA9AC5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{508906F1-2162-44F3-AFB5-18A3B8B2F343}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{508906F1-2162-44F3-AFB5-18A3B8B2F343}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{508906F1-2162-44F3-AFB5-18A3B8B2F343}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1082E5E5-C27F-4627-8E6C-D8C3EFA9AC5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1082E5E5-C27F-4627-8E6C-D8C3EFA9AC5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1082E5E5-C27F-4627-8E6C-D8C3EFA9AC5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1082E5E5-C27F-4627-8E6C-D8C3EFA9AC5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
