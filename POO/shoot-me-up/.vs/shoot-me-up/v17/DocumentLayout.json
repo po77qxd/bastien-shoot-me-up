@@ -23,7 +23,7 @@
       "RelativeMoniker": "D:0:0:{508906F1-2162-44F3-AFB5-18A3B8B2F343}|shoot-me-up\\shoot-me-up.csproj|solutionrelative:shoot-me-up\\ennemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{508906F1-2162-44F3-AFB5-18A3B8B2F343}|shoot-me-up\\shoot-me-up.csproj|d:\\projets\\shoot-me-up\\bastien-shoot-me-up\\poo\\shoot-me-up\\shoot-me-up\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{508906F1-2162-44F3-AFB5-18A3B8B2F343}|shoot-me-up\\shoot-me-up.csproj|D:\\projets\\shoot-me-up\\bastien-shoot-me-up\\POO\\shoot-me-up\\shoot-me-up\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{508906F1-2162-44F3-AFB5-18A3B8B2F343}|shoot-me-up\\shoot-me-up.csproj|solutionrelative:shoot-me-up\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -50,8 +50,7 @@
               "RelativeToolTip": "shoot-me-up\\Ship.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwAsAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:28:48.379Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-01T14:28:48.379Z"
             },
             {
               "$type": "Document",
@@ -63,8 +62,7 @@
               "RelativeToolTip": "shoot-me-up\\Ennemy.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:11:09.029Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-01T14:11:09.029Z"
             },
             {
               "$type": "Document",
@@ -74,7 +72,7 @@
               "RelativeDocumentMoniker": "TestShootMeUp\\UnitTest1.cs",
               "ToolTip": "D:\\projets\\shoot-me-up\\bastien-shoot-me-up\\POO\\shoot-me-up\\TestShootMeUp\\UnitTest1.cs",
               "RelativeToolTip": "TestShootMeUp\\UnitTest1.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAA9wEMAAAB5AAAA",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAwwA8AAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-01T14:05:36.335Z",
               "EditorCaption": ""
@@ -88,8 +86,7 @@
               "ToolTip": "D:\\projets\\shoot-me-up\\bastien-shoot-me-up\\POO\\shoot-me-up\\shoot-me-up\\Form3.cs [Conception]",
               "RelativeToolTip": "shoot-me-up\\Form3.cs [Conception]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T13:43:23.679Z",
-              "EditorCaption": " [Conception]"
+              "WhenOpened": "2024-11-01T13:43:23.679Z"
             },
             {
               "$type": "Document",
@@ -101,8 +98,7 @@
               "RelativeToolTip": "shoot-me-up\\Form3.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAD8AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T13:37:55.691Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-01T13:37:55.691Z"
             },
             {
               "$type": "Document",
@@ -114,8 +110,7 @@
               "RelativeToolTip": "shoot-me-up\\Form1.cs",
               "ViewState": "AQIAACYAAAAAAAAAAAAwwBgAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T13:37:32.543Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-01T13:37:32.543Z"
             },
             {
               "$type": "Document",
@@ -127,8 +122,7 @@
               "RelativeToolTip": "shoot-me-up\\Explosion.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T13:37:21.781Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-01T13:37:21.781Z"
             }
           ]
         }
