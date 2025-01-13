@@ -3,7 +3,9 @@ USE db_shootmeup;
 CREATE ROLE admin;
 CREATE ROLE gameManager;
 
-GRANT ALL PRIVILEGES ON * TO admin WITH GRANT OPTION;
+
+GRANT INSERT, SELECT, UPDATE, DELETE ON * TO admin;
+GRANT GRANT OPTION ON * TO admin;
 
 GRANT SELECT ON * TO gameManager;
 GRANT INSERT ON t_niveau TO gameManager;

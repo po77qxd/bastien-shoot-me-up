@@ -27,36 +27,42 @@ CREATE TABLE t_obstacle(
    PRIMARY KEY(obstacle_id)
 );
 
+CREATE TABLE t_joueur_humain(
+   joueur_humain_id INT AUTO_INCREMENT,
+   nom_joueur VARCHAR(50),
+   PRIMARY KEY(joueur_humain_id)
+);
+
 CREATE TABLE t_niveau(
    niveau_id INT AUTO_INCREMENT,
-   joueur_id INT NOT NULL,
+   joueur_id_fk INT NOT NULL,
    PRIMARY KEY(niveau_id),
-   FOREIGN KEY(joueur_id) REFERENCES t_joueur(joueur_id)
+   FOREIGN KEY(joueur_id_fk) REFERENCES t_joueur(joueur_id)
 );
 
 CREATE TABLE t_highscores(
    score_id INT AUTO_INCREMENT,
    score INT,
-   nom_joueur VARCHAR(50),
-   niveau_id INT NOT NULL,
+   joueur_humain_id_fk INT NOT NULL,
+   niveau_id_fk INT NOT NULL,
    PRIMARY KEY(score_id),
-   FOREIGN KEY(niveau_id) REFERENCES t_niveau(niveau_id)
+   FOREIGN KEY(joueur_humain_id_fk) REFERENCES t_joueur_humain(joueur_humain_id),
+   FOREIGN KEY(niveau_id_fk) REFERENCES t_niveau(niveau_id)
 );
 
 CREATE TABLE t_avoir_ennemi(
-   niveau_id INT,
-   ennemi_id INT,
-   PRIMARY KEY(niveau_id, ennemi_id),
-   FOREIGN KEY(niveau_id) REFERENCES t_niveau(niveau_id),
-   FOREIGN KEY(ennemi_id) REFERENCES t_ennemi(ennemi_id)
+   niveau_id_fk INT,
+   ennemi_id_fk INT,
+   PRIMARY KEY(niveau_id_fk, ennemi_id_fk),
+   FOREIGN KEY(niveau_id_fk) REFERENCES t_niveau(niveau_id),
+   FOREIGN KEY(ennemi_id_fk) REFERENCES t_ennemi(ennemi_id)
 );
 
 CREATE TABLE t_avoir_obstacles(
-   niveau_id INT,
-   obstacle_id INT,
-   PRIMARY KEY(niveau_id, obstacle_id),
-   FOREIGN KEY(niveau_id) REFERENCES t_niveau(niveau_id),
-   FOREIGN KEY(obstacle_id) REFERENCES t_obstacle(obstacle_id)
+   niveau_id_fk INT,
+   obstacle_id_fk INT,
+   PRIMARY KEY(niveau_id_fk, obstacle_id_fk),
+   FOREIGN KEY(niveau_id_fk) REFERENCES t_niveau(niveau_id),
+   FOREIGN KEY(obstacle_id_fk) REFERENCES t_obstacle(obstacle_id)
 );
-
 

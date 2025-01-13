@@ -25,11 +25,11 @@ VALUES
 (2),
 (3);
 
-INSERT INTO t_highscores (score, nom_joueur, niveau_id) 
+INSERT INTO t_highscores (score, niveau_id, joueur_humain_id) 
 VALUES 
-(2500, 'Joueur1', 1),
-(3200, 'Joueur2', 2),
-(2800, 'Joueur3', 3);
+(2500, 1, 1),
+(3200, 2, 2),
+(2800, 3, 3);
 
 INSERT INTO t_avoir_ennemi (niveau_id, ennemi_id) 
 VALUES 
@@ -44,3 +44,9 @@ VALUES
 (1, 2),
 (2, 3),
 (3, 1);
+
+INSERT INTO t_joueur_humain (nom_joueur)
+VALUES
+('Alex Martin'),
+('Emma Dupont'),
+('Lucas Moreau'),
